@@ -1,7 +1,8 @@
-import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * The test class WriteLoopsTest.
@@ -9,6 +10,7 @@ import org.junit.Test;
  * @author  kyounger
  * @version 1.2
  */
+@Test
 public class WriteLoopsTest
 {
     /**

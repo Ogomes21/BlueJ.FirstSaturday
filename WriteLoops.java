@@ -1,4 +1,5 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
+
+import org.testng.annotations.Test;
 
 import java.awt.SystemTray;
 import java.util.concurrent.ThreadLocalRandom;
@@ -11,6 +12,7 @@ import java.util.function.Supplier;
  * @version -0.3
  * 
  */
+
 public class WriteLoops {
 
     private static final int _3 = 3;
@@ -20,10 +22,13 @@ public class WriteLoops {
 
         // Write a FOR loop that counts from 1 to 10.
             // calling
-            w = w + 1;
+           // w = w + 1;
             // each time through the loop
 
         // this will tell the test how many times the loop executed.
+        for (w=0; w < 5; w++) {
+           // w += 1;
+        }
         return w;
     }
 
@@ -32,20 +37,24 @@ public class WriteLoops {
 
         // Write a FOR loop that counts from 1 to 10.
         // calling
-        w = w + 1;
+        //w = w + 1;
         // each time through the loop
-        
-        return w;
-    }
+        for (w = 0; w < 10; w++) {
+            w += 1;
+        }
+            return w;
+        }
 
     public int startAtTwentyOne() {
         int w = 0;
 
         // Write a FOR loop that makes 10 iterations, start at 21.
         // calling
-        w = w + 1;
+       //w = w + 1;
         // each time through the loop
-        
+        for (int count = 21; count <= 31; count++) {
+            w += 1;
+        }
         return w;
     }
 
@@ -56,7 +65,9 @@ public class WriteLoops {
         // calling
         w = w + 1;
         // each time through the loop
-        
+        for (w = 100; w > 100; w--) {
+            w += 1;
+        }
         return w;
     }
 
@@ -65,8 +76,11 @@ public class WriteLoops {
 
         // Write a FOR loop from 0 to 32 by 2s.
         // calling
-        w = w + 1;
+       // w = w + 1;
         // each time through the loop
+        for (int count = 0; count <= 32; count += 2) {
+            w += 1;
+        }
         return w;
     }
 
@@ -75,11 +89,14 @@ public class WriteLoops {
 
         // Write a FOR loop from 1 to less than 5001 by 11s.
         // calling
-        w = w + 1;
+        //w = w + 1;
         // each time through the loop
-        
+        for (int count = 1; count < 5001; count += 11) {
+            w += 1;
+        }
         return w;
     }
+
 
     public int nestedFors() {
         int w = 0;
@@ -87,9 +104,12 @@ public class WriteLoops {
         // Write a nested FOR loop(s), where one counts from
         // 0 to less than 20 and the inner one counts from 0 to 4
                 // calling
-                w = w + 1;
+               // w = w + 1;
                 // each time through the inner loop
-
+    for (int outer = 0; outer < 20; outer++) {
+        for (int inner = 0; inner <= 4; inner++)
+            w += 1;
+    }
         return w;
     }
 
